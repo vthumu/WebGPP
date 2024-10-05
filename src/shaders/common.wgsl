@@ -10,10 +10,13 @@ struct LightSet {
     lights: array<Light>
 }
 
+// TODO 2: Setup light clusters similar to LightSet for multiple shaders access to light clusters
+
 struct CameraUniforms {
     // TODO-1.3: add an entry for the view proj mat (of type mat4x4f)
 }
 
+// LOOK 2: for light calculation
 fn rangeAttenuation(distance: f32) -> f32 {
     return clamp(1.f - pow(distance / ${lightRadius}, 4.f), 0.f, 1.f) / (distance * distance);
 }
