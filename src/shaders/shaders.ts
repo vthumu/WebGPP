@@ -42,7 +42,9 @@ function evalShaderRaw(raw: string) {
 const commonSrc: string = evalShaderRaw(commonRaw);
 
 function processShaderRaw(raw: string) {
-    return commonSrc + evalShaderRaw(raw);
+    var result = commonSrc + evalShaderRaw(raw);
+        console.log('evalShaderRaw called with ' + result);
+    return result;
 }
 
 export const naiveVertSrc: string = processShaderRaw(naiveVertRaw);
